@@ -10,6 +10,25 @@ matplotlib.use('Agg')
 
 
 class troposphericModel():
+    """"
+    Solved for chemical conditions of a tropospheric system.
+
+    Contains methods for initial conditions, differential equation,
+    and solver
+
+    :param FCO: forcing of CO
+    :type float
+    :param FNO: forcing of NO
+    :type float
+    :param FO3: forcing of O3
+    :type float
+    :param t0: initial time
+    :type float
+    :param tf: end time
+    :type float
+    :param X0: initial conditions of CO, NO, O3, NO2, OH, HO2
+    :type list of floats
+    """
 
     # Definition of rate constants
     k4 = 6.9E-8
@@ -100,11 +119,11 @@ def run():
     fig, ax = plt.subplots()
     line, = ax.plot([], [], 'r-')  # Initialize an empty line
     ax.grid()
-    ax.set_xlabel("[CO] molec/$cm^3$", fontsize=30)
-    ax.set_ylabel("[OH] molec/$cm^3$", fontsize=30)
+    ax.set_xlabel("[CO] molec/$cm^3$", fontsize=15)
+    ax.set_ylabel("[OH] molec/$cm^3$", fontsize=15)
     ax.set_xlim(min(CO), max(CO))
     ax.set_ylim(min(OH), max(OH))
-    ax.set_title("[CO] molec/$cm^3$ vs. [OH] molec/$cm^3$", fontsize=35)
+    ax.set_title("[CO] molec/$cm^3$ vs. [OH] molec/$cm^3$", fontsize=15)
 
     def animate(i):
         line.set_data(CO[:i], OH[:i])
