@@ -121,8 +121,8 @@ def run():
     ax.grid()
     ax.set_xlabel("[CO] molec/$cm^3$", fontsize=15)
     ax.set_ylabel("[OH] molec/$cm^3$", fontsize=15)
-    ax.set_xlim(min(CO), max(CO))
-    ax.set_ylim(min(OH), max(OH))
+    ax.set_xlim(0, max(CO))
+    ax.set_ylim(0, max(OH))
     ax.set_title("[CO] molec/$cm^3$ vs. [OH] molec/$cm^3$", fontsize=15)
 
     def animate(i):
